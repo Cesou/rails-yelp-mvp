@@ -1,0 +1,31 @@
+<!-- <div class="navbar-wagon">
+  <a href="/" class="navbar-wagon-brand">
+    <h1> Le blog de Bernard </h1> -->
+<!--   </a>
+</div> -->
+
+
+
+<div class="container">
+  <h1> Les Restaurants</h1>
+  <a><%= link_to " Add a restaurant ", new_restaurant_path, class: 'btn btn-primary'%></a>
+  <div class="row">
+   <% @restaurants.each do |restaurant| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.franceastro.com/wp-content/uploads/rever-de-restaurant.jpg');">
+        <div class="card-category"><%= restaurant.address.capitalize %>
+        </div>
+        <div class="card-description">
+        <h2><%= restaurant.name.capitalize %></h2>
+        </div>
+        <div class ="card-link">
+          <a><%= link_to "More details", restaurant_path(restaurant)%></a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
